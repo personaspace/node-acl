@@ -1,0 +1,16 @@
+{
+    "@context": {
+
+    },
+    "@acl": {
+
+    },
+    "@data": {
+        "title": "test",
+        "id123456": "./test/id123456.txt",
+        "~": {
+            "ref": "#id123456",
+            "contenttype": "text"
+        }
+    }
+}

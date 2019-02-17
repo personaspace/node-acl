@@ -1,0 +1,13 @@
+{
+    "create": false,
+    "read": true,
+    "update": false,
+    "delete": false,
+    "crud": false,
+    "perm_create": false,
+    "perm_read": false,
+    "perm_update": false,
+    "perm_delete": false,
+    "perm_crud": false,
+    "full": false
+ }

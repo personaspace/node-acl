@@ -3,7 +3,22 @@
 
     },
     "@acl": {
-
+        "Friends": {
+            "update": true,
+            "read": true,
+            "create": true
+        },
+        "https://ebntly.personaspace.com": {
+            "read": true,
+            "perm_read": [
+                {
+                    "middleware": "onDomain",
+                    "params": ["example.com"],
+                    "result": true,
+                    "enforce": true
+                }
+            ]
+        }
     },
     "@data": {
         "title": "test",

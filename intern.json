@@ -1,0 +1,5 @@
+{
+    "suites": "tests/unit/**/*.test.js",
+    "functionalSuites": "tests/functional/**/*.js",
+    "environments": ["node", "node"]
+}

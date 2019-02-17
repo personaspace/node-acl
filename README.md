@@ -33,4 +33,15 @@ resolveAcl(resourcePath, request, identity, acl, defaultAcl, groups, (resultantP
 })
 ```
 
-## Contributing
+## Contributing to PersonaSpace
+PersonaSpace is a large project and [contributors](https://github.com/personaspace/node-acl/blob/master/CONTRIBUTORS.md) are welcome. Thank you for your support and efforts!
+
+There are a lot of ways to contribute:
+
+* [Create a new issue](https://github.com/personaspace/node-acl/issues/new) to report bugs or request features
+* [Fix an issue](https://github.com/personaspace/node-acl/issues)
+
+Be sure to look at [CONTRIBUTING.md](https://github.com/personaspace/node-acl/blob/master/CONTRIBUTING.md).
+
+## License
+PersonaSpace is licensed under [the MIT License](https://github.com/personaspace/node-acl/blob/master/LICENSE).

@@ -1,5 +1,12 @@
 {
     "suites": "tests/unit/**/*.test.js",
     "functionalSuites": "tests/functional/**/*.js",
-    "environments": ["node", "node"]
+    "environments": ["node", "node"],
+    "coverage": ["tests/unit/**/*.test.js"],
+    "reporters": [
+        {
+            "name": "jsoncoverage",
+            "filename": "coverage.json"
+        }
+    ]
 }

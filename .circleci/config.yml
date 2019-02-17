@@ -14,6 +14,9 @@ jobs: # a collection of steps
       - run:
           name: install-npm-wee
           command: npm install
+      - codecov:
+          name: install-codecov
+          command: npm install -g codecov
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -21,6 +24,9 @@ jobs: # a collection of steps
       - run:
           name: test
           command: npm test
+      - upload_codedov:
+          name: upload-codecov
+          command: codecov
       - store_artifacts:
           path: test-results.xml
           prefix: tests

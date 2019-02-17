@@ -1,8 +1,0 @@
-{
-    "npm:v11.1.0:win32": {
-        "client": "npm",
-        "version": "v11.1.0",
-        "platform": "win32",
-        "tests": {}
-    }
-}

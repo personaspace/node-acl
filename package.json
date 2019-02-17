@@ -1,5 +1,5 @@
 {
-  "name": "@personspace/node-server-acl",
+  "name": "@personspace/server-acl",
   "version": "0.1.0",
   "description": "A package for checking resource ACLs on PersonaSpace servers.",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/personaspace/node-acl.git"
+    "url": "git+https://github.com/personaspace/node-server-acl.git"
   },
   "keywords": [
     "PersonaSpace",
@@ -25,9 +25,9 @@
   "author": "Eric L. Bentley",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/personaspace/node-acl/issues"
+    "url": "https://github.com/personaspace/node-server-acl/issues"
   },
-  "homepage": "https://github.com/personaspace/node-acl#readme",
+  "homepage": "https://github.com/personaspace/node-server-acl#readme",
   "devDependencies": {
     "intern": "^4.4.1",
     "standard": "^12.0.1"

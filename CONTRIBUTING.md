@@ -4,20 +4,20 @@ We thank you for your interest in contributing to PersonaSpace and are appreciat
 
 ## Code of Conduct
 
-PersonaSpace has adopted a code of conduct that all contributors are expected to adhere to. Please read the [CODE_OF_CONDUCT](https://github.com/personaspace/node-acl/blob/master/CODE_OF_CONDUCT.md) in order to understand hat will and will not be tolerated.
+PersonaSpace has adopted a code of conduct that all contributors are expected to adhere to. Please read the [CODE_OF_CONDUCT](https://github.com/personaspace/node-server-acl/blob/master/CODE_OF_CONDUCT.md) in order to understand hat will and will not be tolerated.
 
 ## Guide
 For a smooth contribution process, please follow the following instructions.
 
 ### Fork
 
-Fork the project [on GitHub](https://github.com/personaspace/node-acl) and check out
+Fork the project [on GitHub](https://github.com/personaspace/node-server-acl) and check out
 your copy.
 
 ```sh
-$ git clone git@github.com:your_username/node-acl.git
+$ git clone git@github.com:your_username/node-server-acl.git
 $ cd node
-$ git remote add upstream git://github.com/personaspace/node-acl.git
+$ git remote add upstream git://github.com/personaspace/node-server-acl.git
 ```
 
 ### Branch
@@ -114,7 +114,7 @@ $ npm run lint:fix
 $ git push origin my-feature-branch
 ```
 
-Go to https://github.com/your_username/node-acl and select your feature branch.  Click
+Go to https://github.com/your_username/node-server-acl and select your feature branch.  Click
 the 'Pull Request' button and fill out the form.
 
 Pull requests are usually reviewed within a few days.  If there are comments

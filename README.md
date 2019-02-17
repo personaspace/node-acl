@@ -8,7 +8,7 @@ A package for checking resource ACLs on PersonaSpace servers.
 
 PersonaSpace uses a powerful ACL implementation that give an owner unparalleled control over which visitors can interact with their data, where visitors can access their data from, and when visitors can access it. `node-acl` use simple boolean values for access to the data and permission middleware that can modify an ACL dynamically based on request data, date, time, etc...
 
-*This package provides only the resolution of the ACLs for a given visitor. The `node-resource` package handles validation of the visitor's access to the data.*
+*This package provides only the resolution of the ACLs for a given visitor. The [`node-resource`](https://github.com/personaspace/node-resource) package handles validation of the visitor's access to the data.*
 
 ## Installation
 
@@ -32,3 +32,5 @@ resolveAcl(resourcePath, request, identity, acl, defaultAcl, groups, (resultantP
     //  Check resultantPerms
 })
 ```
+
+## Contributing

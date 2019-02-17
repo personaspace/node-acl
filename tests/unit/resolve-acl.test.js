@@ -2,14 +2,14 @@
 const { registerSuite } = intern.getPlugin('interface.object')
 const { assert } = intern.getPlugin('chai')
 
-const aclCheck = require('../../lib/acl-check')
+const aclCheck = require('../../lib/resolve-acl')
 const identity = 'https://testuser.personaspace.com'
 const resource = '../support/data/public/notes/test'
 const acl = require(`${resource}.json`)['@acl']
 const defaultAcl = require('../support/default-acl.json')
 const groups = require('../support/groups.json')
 registerSuite('acl-check', {
-  'check-acl (Bad identity on server)' () {
+  'resolve-acl (Bad identity on server)' () {
     const dfd = this.async()
     aclCheck(resource, { headers: { host: 'example.com' } }, identity, acl, defaultAcl, groups, dfd.callback((err, perms) => {
       if (err) throw err
@@ -26,7 +26,7 @@ registerSuite('acl-check', {
       assert.isFalse(perms.full)
     }))
   },
-  'check-acl (Bad identity on bad server)' () {
+  'resolve-acl (Bad identity on bad server)' () {
     const dfd = this.async()
     aclCheck(resource, { headers: { host: 'test.example.com' } }, identity, acl, defaultAcl, groups, dfd.callback((err, perms) => {
       if (err) throw err
@@ -43,7 +43,7 @@ registerSuite('acl-check', {
       assert.isFalse(perms.full)
     }))
   },
-  'check-acl (Good identity on bad server)' () {
+  'resolve-acl (Good identity on bad server)' () {
     const dfd = this.async()
     aclCheck(resource, { headers: { host: 'test.example.com' } }, 'https://ebntly.personaspace.com', acl, defaultAcl, groups, dfd.callback((err, perms) => {
       if (err) throw err
@@ -60,7 +60,7 @@ registerSuite('acl-check', {
       assert.isFalse(perms.full)
     }))
   },
-  'check-acl (Good identity on server)' () {
+  'resolve-acl (Good identity on server)' () {
     const dfd = this.async()
     aclCheck(resource, { headers: { host: 'example.com' } }, 'https://ebntly.personaspace.com', acl, defaultAcl, groups, dfd.callback((err, perms) => {
       if (err) throw err

@@ -6,84 +6,29 @@
 
 A package for checking resource ACLs on PersonaSpace servers.
 
+PersonaSpace uses a powerful ACL implementation that give an owner unparalleled control over which visitors can interact with their data, where visitors can access their data from, and when visitors can access it. `node-acl` use simple boolean values for access to the data and permission middleware that can modify an ACL dynamically based on request data, date, time, etc...
 
-Owners can create their own groups, which they can place connections into. They can also define an identity as a group, of which the connections of that identity are reviewed.
+*This package provides only the resolution of the ACLs for a given visitor. The `node-resource` package handles validation of the visitor's access to the data.*
 
-Groups are reviewed first, looking for the identity currently accessing a resource or container. If a permission is denied, it is denied unless explicitly granted when reviewing the user permissions. 
+## Installation
 
-This should be cached per visitor unless permissions change and the owner has access to all (so a mechanism should be in place to prevent blocking themselves from the resource) and no json directory or file viewing should be permitted!
-
+Install `node-acl` using npm.
 ```
-{
-    //  resource level
-    "resource": {
-        "private": true,    //  quick way to block anything
-        "webID": {
-            "create": true | false
-            "read": [
-                {
-                    "hasFriend": "webID",
-                    "result": false,
-                    "enforce": true
-                },
-                {
-                    "dayOfWeek": ["M"],
-                    "result": true
-                },
-                {
-                    "dateBetween": ["July 19, 2019", "July 30, 2019"],
-                    "result": false
-                },
-                {
-                    "dateAfter|dateBefore": "July 19, 2019",
-                    "result": false
-                },
-                {
-                    "timeBetween": [1800, 2200],
-                    "result": false
-                },
-                {
-                    "timeAfter|timeBefore": 2300,
-                    "result": false
-                },
-                {
-                    "onDomain": "somedomain",
-                    "result": false
-                },
-                {
-                    "ip": "172.98.24.11",
-                    "result": false
-                },
-                {
-                    "ipRange": ["172.98.24.11", "172.98.24.150"],
-                    "result": false
-                },
-                {
-                    "ipSubnet": ["0.0.0.0/8"],
-                    "result": false
-                },
-                {
-                    "and": "...",
-                    "result": false
-                },
-                {
-                    "or": "...",
-                    "result": false
-                }
-            ],
-            "update": "...",
-            "delete": "...",
-            "crud": "...",
-            "perm_create": "...",
-            "perm_read": "...",
-            "perm_update": "...",
-            "perm_delete": "...",
-            "perm_crud": "...",
-            "full"
-        },
-        "props": {
-            "webID": "..."
-        }
-    }
-}
+npm i @personaspace/node-acl
+```
+
+## Usage
+
+```js
+//  request is the web request on a PersonaSpace server.
+const { resolveAcl } = require('@personaspace/node-acl')
+const resource = './ebntly/data/notes/test'
+const identity = 'https://ebntly.personaspace.com'
+const acl = require(`${resource}.json`)['@acl']
+const defaultAcl = require('../support/default-acl.json')
+const groups = require('../support/groups.json')
+
+resolveAcl(resourcePath, request, identity, acl, defaultAcl, groups, (resultantPerms) => {
+    //  Check resultantPerms
+})
 ```

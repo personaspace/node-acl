@@ -1,0 +1,46 @@
+{
+    "create": {
+        "result": false,
+        "enforce": true
+    },
+    "read": {
+        "result": false,
+        "enforce": true
+    },
+    "update": {
+        "result": false,
+        "enforce": true
+    },
+    "delete": {
+        "result": false,
+        "enforce": true
+    },
+    "crud": {
+        "result": false,
+        "enforce": true
+    },
+    "perm_create": {
+        "result": false,
+        "enforce": true
+    },
+    "perm_read": {
+        "result": false,
+        "enforce": true
+    },
+    "perm_update": {
+        "result": false,
+        "enforce": true
+    },
+    "perm_delete": {
+        "result": false,
+        "enforce": true
+    },
+    "perm_crud": {
+        "result": false,
+        "enforce": true
+    },
+    "full": {
+        "result": false,
+        "enforce": true
+    }
+ }

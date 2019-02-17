@@ -1,5 +1,6 @@
 # node-acl
 [![CircleCI](https://circleci.com/gh/personaspace/node-acl/tree/master.svg?style=svg)](https://circleci.com/gh/personaspace/node-acl/tree/master)
+[![codecov](https://codecov.io/gh/personaspace/node-acl/branch/master/graph/badge.svg)](https://codecov.io/gh/personaspace/node-acl)
 [![Known Vulnerabilities](https://snyk.io/test/github/personaspace/node-acl/badge.svg?targetFile=package.json)](https://snyk.io/test/github/personaspace/node-acl?targetFile=package.json)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

@@ -3,13 +3,13 @@ const { registerSuite } = intern.getPlugin('interface.object')
 const { assert } = intern.getPlugin('chai')
 
 const processPermissions = require('../../lib/process-permissions')
-
+const { middleware } = require('@personaspace/server-acl-middleware')
 const simpleACL = require('../support/simple-acl-list.json')
 const complexACL = require('../support/complex-acl-list.json')
 registerSuite('process-permissions', {
   'process simple ACL test' () {
     const dfd = this.async()
-    processPermissions(simpleACL, {}, dfd.callback((err, perms) => {
+    processPermissions(simpleACL, {}, middleware, dfd.callback((err, perms) => {
       if (err) throw err
       assert.isTrue(perms.create)
       assert.isTrue(perms.read)
@@ -26,7 +26,7 @@ registerSuite('process-permissions', {
   },
   'process complex ACL test (BLOCK DOMAIN CREATE:OKAY)' () {
     const dfd = this.async()
-    processPermissions(complexACL, { headers: { host: 'example.com' } }, dfd.callback((err, perms) => {
+    processPermissions(complexACL, { headers: { host: 'example.com' } }, middleware, dfd.callback((err, perms) => {
       if (err) throw err
       assert.isFalse(perms.create)
       assert.isTrue(perms.read)
@@ -43,7 +43,7 @@ registerSuite('process-permissions', {
   },
   'process complex ACL test (BLOCK DOMAIN CREATE:NOTOKAY)' () {
     const dfd = this.async()
-    processPermissions(complexACL, { headers: { host: 'test.example.com' } }, dfd.callback((err, perms) => {
+    processPermissions(complexACL, { headers: { host: 'test.example.com' } }, middleware, dfd.callback((err, perms) => {
       if (err) throw err
       assert.isTrue(perms.create)
       assert.isTrue(perms.read)

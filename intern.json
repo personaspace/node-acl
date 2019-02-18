@@ -4,6 +4,7 @@
     "environments": ["node", "node"],
     "coverage": ["tests/unit/**/*.test.js"],
     "reporters": [
+        "runner",
         {
             "name": "jsoncoverage",
             "filename": "coverage.json"

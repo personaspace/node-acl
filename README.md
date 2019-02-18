@@ -1,7 +1,7 @@
 # PersonaSpace Node.js Server ACL
 [![CircleCI](https://circleci.com/gh/personaspace/node-server-acl/tree/master.svg?style=svg)](https://circleci.com/gh/personaspace/node-server-acl/tree/master)
 [![codecov](https://codecov.io/gh/personaspace/node-server-acl/branch/master/graph/badge.svg)](https://codecov.io/gh/personaspace/node-server-acl)
-[![Known Vulnerabilities](https://snyk.io/test/github/personaspace/node-server-acl/badge.svg?targetFile=package.json)](https://snyk.io/test/github/personaspace/node-server-acl?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/personaspace/node-server-acl/master/badge.svg?targetFile=package.json)](https://snyk.io/test/github/personaspace/node-server-acl/master?targetFile=package.json)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A package for checking resource ACLs on PersonaSpace servers.
@@ -23,14 +23,18 @@ npm i @personaspace/server-acl
 //  request is the web request on a PersonaSpace server.
 const { resolveAcl } = require('@personaspace/server-acl')
 const { middleware } = require('@personaspace/server-acl-middleware')
+
 const resource = './ebntly/data/notes/test'
 const identity = 'https://ebntly.personaspace.com'
-const acl = require(`${resource}.json`)['@acl']
+
 const defaultAcl = require('../support/default-acl.json')
+const acl = require(`${resource}.json`)['@acl']
 const groups = require('../support/groups.json')
 
-resolveAcl(resourcePath, request, identity, acl, defaultAcl, groups, middleware, (resultantPerms) => {
-    //  Check resultantPerms
+
+resolveAcl(resourcePath, request, identity, acl, defaultAcl, groups, middleware, (err, resultantPerms) => {
+  if(err) throw err
+  //  Check resultantPerms
 })
 ```
 

@@ -33,7 +33,6 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
-    "@personaspace/server-acl-middleware": "^0.1.0",
-    "deepmerge": "^3.2.0"
+    "@personaspace/server-acl-middleware": "^0.1.0"
   }
 }
